@@ -1,5 +1,5 @@
 <template>
-  <div class="main">
+  <div class="main font-sans w-screen h-screen flex flex-col justify-center items-center bg-gradient-to-r from-pink via-coral to-light-orange">
     <Card />
   </div>
 </template>
@@ -8,10 +8,5 @@
 import Card from '@/components/Card.vue'
 </script>
 
-<style lang="scss" scoped>
-.main {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+<style scoped lang="scss">
 </style>
