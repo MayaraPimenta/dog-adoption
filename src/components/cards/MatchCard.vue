@@ -1,5 +1,8 @@
 <template>
-  <div class="match absolute z-40 top-0 left-0 backdrop-blur-md w-full h-full px-6 py-8 flex flex-col justify-between items-center bg-black/50 text-white rounded-lg">
+  <div
+    class="match absolute z-40 top-0 left-0 backdrop-blur-md w-full h-full px-6 py-8
+    flex flex-col justify-between items-center bg-black/50 text-white rounded-lg"
+  >
     <img
       src="../assets/svg/match.svg"
       alt="Its a natch"
@@ -18,11 +21,11 @@
     </main>
 
     <footer class="w-full flex flex-col items-center justify-center gap-y-3 mt-6 text-sm">
-      <button class="w-full p-2 rounded-full bg-gradient-to-r from-pink via-coral to-light-orange">
+      <button class="w-full p-2 rounded-full bg-gradient-to-r from-amber-300 to-amber-400">
         Send a Message
       </button>
 
-      <button class="w-full p-2 rounded-full border-2 border-coral">
+      <button class="w-full p-2 rounded-full border-2 border-amber-400">
         Keep swiping
       </button>
     </footer>
