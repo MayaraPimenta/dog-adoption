@@ -1,7 +1,7 @@
 <template>
   <div
     ref="cardItem"
-    class="card relative flex flex-col bg-white-100 p-4 h-500 w-300 rounded-lg font-sans"
+    class="card relative flex flex-col bg-white-100 p-4 sm:rounded-lg font-sans w-screen sm:w-auto h-screen sm:h-3/5"
   >
     <component :is="SelectionCard"></component>
   </div>
