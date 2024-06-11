@@ -1,41 +1,42 @@
 <template>
   <main
-      class="card__main h-5/6 w-full bg-cover rounded-lg flex flex-col justify-end items-start text-white p-3 z-0"
-      v-on="{ dragstart: startDrag, dragend: endDrag }"
+    class="card__main min-w-[320px] h-5/6 w-full bg-cover rounded-lg
+    flex flex-col justify-end items-start text-white p-3 z-0"
+    v-on="{ dragstart: startDrag, dragend: endDrag }"
+  >
+    <p class="text-2xl font-semibold">
+      Name
+    </p>
+
+    <div>
+      <span class="text-sm">
+        caracteristicas
+      </span>
+    </div>
+
+    <div>
+      <span class="text-sm">
+        Lorem ipsum dolor sit amet.
+      </span>
+    </div>
+  </main>
+  <MatchCard v-if="match" />
+
+  <footer class="flex items-center justify-around mt-4">
+    <button
+      class="flex justify-center items-center h-12 w-12 bg-white-100 drop-shadow-xl rounded-full"
+      @click="leftClick"
     >
-      <p class="text-2xl font-semibold">
-        Name
-      </p>
+      <XMarkIcon class="h-6 w-6 text-light-orange"/>
+    </button>
 
-      <div>
-        <span class="text-sm">
-          caracteristicas
-        </span>
-      </div>
-
-      <div>
-        <span class="text-sm">
-          Lorem ipsum dolor sit amet.
-        </span>
-      </div>
-    </main>
-    <MatchCard v-if="match" />
-
-    <footer class="flex items-center justify-around mt-4">
-      <button
-        class="flex justify-center items-center h-12 w-12 bg-white-100 drop-shadow-xl rounded-full"
-        @click="leftClick"
-      >
-        <XMarkIcon class="h-6 w-6 text-light-orange"/>
-      </button>
-
-      <button
-        class="flex justify-center items-center h-12 w-12 bg-white-100 drop-shadow-xl rounded-full"
-        @click="rightClick"
-      >
-        <HeartIcon class="h-6 w-6 text-emerald-400" />
-      </button>
-    </footer>
+    <button
+      class="flex justify-center items-center h-12 w-12 bg-white-100 drop-shadow-xl rounded-full"
+      @click="rightClick"
+    >
+      <HeartIcon class="h-6 w-6 text-emerald-400" />
+    </button>
+  </footer>
 </template>
 
 <script setup lang="ts">
@@ -78,8 +79,7 @@ function endDrag(event: DragEvent) {
     background-image:
     linear-gradient(0deg, rgba(0, 0, 0, 0.727) 4%, rgba(79,79,79,0.2329306722689075)
     45%, rgba(255,255,255,0) 100%),
-    url('https://hips.hearstapps.com/hmg-prod/images/best-guard-dog-breeds-1648475528.jpg?
-    crop=1.00xw:0.835xh;0,0.0817xh&resize=980:*');
+    url('../../assets/img/labels-img.jpeg');
   }
 }
 </style>

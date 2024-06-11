@@ -33,6 +33,7 @@
     <button
       class="text-amber-500 w-16 bg-orange-100 rounded-full self-end p-2
       transition-all hover:-translate-y-1 hover:scale-105"
+      @click="$emit('nextStep', 'DataCard')"
     >
       <ChevronRightIcon />
     </button>
@@ -44,16 +45,16 @@ import { ref } from 'vue';
 import TagElement from '@/components/common/TagElement.vue';
 import { ChevronRightIcon } from '@heroicons/vue/16/solid';
 
+//vars
 const list = ref<string[]>([
   'pequeno porte', 'médio porte', 'grande porte',
   'pêlo baixo', 'pêlo longo', 'filhote', 'adulto',
   'idoso', 'muita energia', 'quieto', 'bom com outros cães',
   'interage bem com crianças'
 ]);
-
 const items = ref<string[]>([]);
-// const name = ref<string>();
 
+//functions
 const selectItems = (item: string) => {
   const foundItem = items.value.findIndex((el: string) => el === item);
 
@@ -63,6 +64,8 @@ const selectItems = (item: string) => {
   items.value.push(item);
 };
 const isSelected = (item: string):boolean => items.value.includes(item);
+
+defineEmits(['nextStep']);
 </script>
 
 <style scoped>
