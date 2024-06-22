@@ -33,7 +33,7 @@
     <button
       class="text-amber-500 w-16 bg-orange-100 rounded-full self-end p-2
       transition-all hover:-translate-y-1 hover:scale-105"
-      @click="$emit('nextStep', 'DataCard')"
+      @click="nextCard"
     >
       <ChevronRightIcon />
     </button>
@@ -44,28 +44,34 @@
 import { ref } from 'vue';
 import TagElement from '@/components/common/TagElement.vue';
 import { ChevronRightIcon } from '@heroicons/vue/16/solid';
+import { useSelectionStore } from '@/stores/selection';
 
 //vars
 const list = ref<string[]>([
   'pequeno porte', 'médio porte', 'grande porte',
   'pêlo baixo', 'pêlo longo', 'filhote', 'adulto',
   'idoso', 'muita energia', 'quieto', 'bom com outros cães',
-  'interage bem com crianças'
+  'interage bem com crianças', 'gosta de ficar sozinho'
 ]);
-const items = ref<string[]>([]);
+const characteristics = ref<string[]>([]);
+const emits = defineEmits(['nextStep']);
+const store = useSelectionStore();
 
 //functions
 const selectItems = (item: string) => {
-  const foundItem = items.value.findIndex((el: string) => el === item);
+  const foundItem = characteristics.value.findIndex((el: string) => el === item);
 
   if (foundItem !== -1) {
-    return items.value.splice(foundItem, 1);
+    return characteristics.value.splice(foundItem, 1);
   }
-  items.value.push(item);
+  characteristics.value.push(item);
 };
-const isSelected = (item: string):boolean => items.value.includes(item);
+const isSelected = (item: string):boolean => characteristics.value.includes(item);
 
-defineEmits(['nextStep']);
+const nextCard = () => {
+  emits('nextStep', 'DataCard');
+  store.setCharacteristics(characteristics.value);
+}
 </script>
 
 <style scoped>

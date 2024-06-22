@@ -5,7 +5,7 @@
   >
     <img
       src="../assets/svg/match.svg"
-      alt="Its a natch"
+      alt="Its a match"
       class="h-auto w-52"
     >
 

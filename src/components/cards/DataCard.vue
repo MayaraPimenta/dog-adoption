@@ -37,11 +37,16 @@
       <HeartIcon class="h-6 w-6 text-emerald-400" />
     </button>
   </footer>
+
+  <div class="flex items-center ">
+    <ChevronLeftIcon class="h-6 w-6 text-light-orange"/>
+    <ChevronRightIcon class="h-6 w-6 text-light-orange"/>
+  </div>
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue';
-import { HeartIcon, XMarkIcon } from '@heroicons/vue/24/solid';
+import { HeartIcon, XMarkIcon, ChevronRightIcon, ChevronLeftIcon } from '@heroicons/vue/24/solid';
 import MatchCard from './MatchCard.vue';
 
 let cardItemStart = 0;
