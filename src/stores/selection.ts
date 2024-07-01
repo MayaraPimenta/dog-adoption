@@ -3,7 +3,7 @@ import { defineStore } from 'pinia';
 
 export const useSelectionStore = defineStore('selection', () => {
   //state
-  const characteristicsList = ref<string[]>();
+  const characteristicsList = ref<string[]>([]);
 
   //getters
   // const doubleCount = computed(() => count.value * 2);
@@ -12,7 +12,7 @@ export const useSelectionStore = defineStore('selection', () => {
   function setCharacteristics(characteristics: string[]) {
     characteristicsList.value = characteristics
 
-    console.log(characteristicsList.value);
+    console.log('store:', characteristicsList.value);
   }
 
   return { characteristicsList, setCharacteristics };

@@ -33,36 +33,39 @@ const steps = ref<IComponents>({
 });
 const dogList = ref([
   {
-    size: 'pequeno porte',
-    hair: 'pêlo longo',
-    age: 'adulto',
-    energy: 'muita energia',
-    interaction: 'bom com outros cães'
+    id: 0,
+    nome: 'Bob',
+    img: '../../assets/img/labels-img.jpeg',
+    caracteristicas: ['pequeno porte', 'pêlo longo', 'adulto', 'muita energia', 'bom com outros cães']
   },
   {
-    size: 'pequeno porte',
-    hair: 'pêlo curto',
-    age: 'filhote',
-    energy: 'quieto',
-    interaction: 'interage bem com crianças'
+    id: 1,
+    nome: 'Cão',
+    img: '../../assets/img/labels-img.jpeg',
+    caracteristicas: ['pequeno porte', 'pêlo curto', 'filhote', 'quieto', 'interage bem com crianças']
   },
   {
-    size: 'grande porte',
-    hair: 'pêlo curto',
-    age: 'idoso',
-    energy: 'quieto',
-    interaction: 'gosta de ficar sozinho'
+    id: 2,
+    nome: 'Costelinha',
+    img: '../../assets/img/labels-img.jpeg',
+    caracteristicas: ['grande porte', 'pêlo curto', 'idoso', 'quieto', 'gosta de ficar sozinho']
   },
 ]);
 const index = ref(0);
 const store = useSelectionStore();
+const result = ref();
 
 const nextStep = (stepName: string) => {
   currentStep.value = stepName;
+
+  if (store.characteristicsList) {
+    result.value = dogList.value.filter(item => item.caracteristicas.includes(store.characteristicsList[0] && store.characteristicsList[1]));
+  }
 };
 
 // TODO:
-// - Filtrar o array dogList pela characteristicsList (talvez o characteristics list tenha que ser de objetos e n string)
+// - Filtrar o array dogList pela characteristicsList (talvez o characteristics list tenha que ser de objetos e n string) -OK
+// - Criar tipo dog com id, caracteristicas e image
 // - Randomizar o array
 // - Criar metodo para selecionar o index a cada clique
 </script>

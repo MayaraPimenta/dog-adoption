@@ -3,22 +3,27 @@
     class="card__main min-w-[320px] h-5/6 w-full bg-cover rounded-lg
     flex flex-col justify-end items-start text-white p-3 z-0"
     v-on="{ dragstart: startDrag, dragend: endDrag }"
+    :style="{ 'background-image': selectedDog.img }"
   >
     <p class="text-2xl font-semibold">
-      Name
+      {{ selectedDog.nome }}
     </p>
 
     <div>
-      <span class="text-sm">
-        caracteristicas
+      <span
+        v-for="(characteristic, index) in selectedDog.caracteristicas"
+        :key="index"
+        class="text-sm"
+      >
+        {{ characteristic }}
       </span>
     </div>
-
+<!-- 
     <div>
       <span class="text-sm">
         Lorem ipsum dolor sit amet.
       </span>
-    </div>
+    </div> -->
   </main>
   <MatchCard v-if="match" />
 
@@ -49,9 +54,19 @@ import { ref } from 'vue';
 import { HeartIcon, XMarkIcon, ChevronRightIcon, ChevronLeftIcon } from '@heroicons/vue/24/solid';
 import MatchCard from './MatchCard.vue';
 
+interface Dog {
+  id: number,
+  nome: string,
+  img: string,
+  caracteristicas: string[]
+}
+
 let cardItemStart = 0;
 let cardItemEnd = 0;
 const match = ref<boolean>(false);
+const props = defineProps<{
+  selectedDog: Dog,
+}>()
 
 function leftClick() {
   console.log('left');
@@ -81,10 +96,9 @@ function endDrag(event: DragEvent) {
 <style lang="scss" scoped>
 .card {
   &__main {
-    background-image:
-    linear-gradient(0deg, rgba(0, 0, 0, 0.727) 4%, rgba(79,79,79,0.2329306722689075)
-    45%, rgba(255,255,255,0) 100%),
-    url('../../assets/img/labels-img.jpeg');
+    // background-image:
+    // linear-gradient(0deg, rgba(0, 0, 0, 0.727) 4%, rgba(79,79,79,0.2329306722689075)
+    // 45%, rgba(255,255,255,0) 100%),
   }
 }
 </style>

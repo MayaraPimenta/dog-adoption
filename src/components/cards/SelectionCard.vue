@@ -49,7 +49,7 @@ import { useSelectionStore } from '@/stores/selection';
 //vars
 const list = ref<string[]>([
   'pequeno porte', 'médio porte', 'grande porte',
-  'pêlo baixo', 'pêlo longo', 'filhote', 'adulto',
+  'pêlo curto', 'pêlo longo', 'filhote', 'adulto',
   'idoso', 'muita energia', 'quieto', 'bom com outros cães',
   'interage bem com crianças', 'gosta de ficar sozinho'
 ]);
@@ -65,13 +65,21 @@ const selectItems = (item: string) => {
     return characteristics.value.splice(foundItem, 1);
   }
   characteristics.value.push(item);
+
+  if (characteristics.value.length > 2) {
+    characteristics.value.shift();
+  }
 };
 const isSelected = (item: string):boolean => characteristics.value.includes(item);
 
 const nextCard = () => {
-  emits('nextStep', 'DataCard');
   store.setCharacteristics(characteristics.value);
+
+  emits('nextStep', 'DataCard');
 }
+
+//TODO:
+// Adicionar validação: Limitar numero de escolha de caracteristicas
 </script>
 
 <style scoped>
