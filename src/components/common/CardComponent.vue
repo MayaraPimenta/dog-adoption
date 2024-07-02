@@ -7,8 +7,10 @@
     <KeepAlive>
       <component
         :is="steps[currentStep]"
-        :selected-dog="dogList[index]"
+        :selected-dog="result[index]"
+        :list-length="result.length"
         @next-step="nextStep"
+        @next-card="nextCard"
       >
       </component>
     </KeepAlive>
@@ -36,7 +38,7 @@ const dogList = ref([
     id: 0,
     nome: 'Bob',
     img: '../../assets/img/labels-img.jpeg',
-    caracteristicas: ['pequeno porte', 'pêlo longo', 'adulto', 'muita energia', 'bom com outros cães']
+    caracteristicas: ['pequeno porte', 'pêlo longo', 'filhote', 'muita energia', 'bom com outros cães']
   },
   {
     id: 1,
@@ -51,22 +53,38 @@ const dogList = ref([
     caracteristicas: ['grande porte', 'pêlo curto', 'idoso', 'quieto', 'gosta de ficar sozinho']
   },
 ]);
+
+interface Dog {
+  id: number,
+  nome: string,
+  img: string,
+  caracteristicas: string[]
+}
+
 const index = ref(0);
 const store = useSelectionStore();
-const result = ref();
+const result = ref<Dog[]>([]);
 
 const nextStep = (stepName: string) => {
   currentStep.value = stepName;
 
   if (store.characteristicsList) {
-    result.value = dogList.value.filter(item => item.caracteristicas.includes(store.characteristicsList[0] && store.characteristicsList[1]));
+    result.value = dogList.value.filter(item =>
+    item.caracteristicas.includes(store.characteristicsList[0] && store.characteristicsList[1]));
   }
 };
+const nextCard = () => {
+  if (index.value === result.value.length-1) {
+    index.value = 0;
 
+    return;
+  }
+
+  index.value++;
+};
 // TODO:
-// - Filtrar o array dogList pela characteristicsList (talvez o characteristics list tenha que ser de objetos e n string) -OK
-// - Criar tipo dog com id, caracteristicas e image
-// - Randomizar o array
-// - Criar metodo para selecionar o index a cada clique
+// - Criar arquivo de tipos e inserir dog
+// - fazer imgs funcionar
+// - consertar warnings
 </script>
 

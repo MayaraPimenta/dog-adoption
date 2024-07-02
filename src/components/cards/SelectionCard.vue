@@ -76,7 +76,7 @@ const nextCard = () => {
   store.setCharacteristics(characteristics.value);
 
   emits('nextStep', 'DataCard');
-}
+};
 
 //TODO:
 // Adicionar validação: Limitar numero de escolha de caracteristicas

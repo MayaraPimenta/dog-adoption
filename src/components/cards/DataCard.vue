@@ -1,29 +1,27 @@
 <template>
+  <button
+    class="absolute -left-20 top-0 bottom-0 my-auto flex justify-center items-center
+  h-12 w-12 bg-white-100/50 drop-shadow-xl rounded-full">
+    <ChevronLeftIcon class="h-6 w-6 text-light-orange"/>
+  </button>
+
   <main
-    class="card__main min-w-[320px] h-5/6 w-full bg-cover rounded-lg
+    class="card__main min-w-[320px] max-w-sm h-5/6 w-full bg-cover rounded-lg bg-black
     flex flex-col justify-end items-start text-white p-3 z-0"
+    :style="{ 'background-image': props.selectedDog.img }"
     v-on="{ dragstart: startDrag, dragend: endDrag }"
-    :style="{ 'background-image': selectedDog.img }"
   >
     <p class="text-2xl font-semibold">
-      {{ selectedDog.nome }}
+      {{ props.selectedDog.nome }}
     </p>
 
     <div>
       <span
-        v-for="(characteristic, index) in selectedDog.caracteristicas"
-        :key="index"
-        class="text-sm"
+        class="text-sm normal-case"
       >
-        {{ characteristic }}
+        {{ props.selectedDog.caracteristicas.join(', ') }}
       </span>
     </div>
-<!-- 
-    <div>
-      <span class="text-sm">
-        Lorem ipsum dolor sit amet.
-      </span>
-    </div> -->
   </main>
   <MatchCard v-if="match" />
 
@@ -43,10 +41,13 @@
     </button>
   </footer>
 
-  <div class="flex items-center ">
-    <ChevronLeftIcon class="h-6 w-6 text-light-orange"/>
+  <button
+    class="absolute -right-20 top-0 bottom-0 my-auto flex justify-center items-center
+    h-12 w-12 bg-white-100/50 drop-shadow-xl rounded-full"
+    @click="next()"
+  >
     <ChevronRightIcon class="h-6 w-6 text-light-orange"/>
-  </div>
+  </button>
 </template>
 
 <script setup lang="ts">
@@ -66,21 +67,20 @@ let cardItemEnd = 0;
 const match = ref<boolean>(false);
 const props = defineProps<{
   selectedDog: Dog,
-}>()
+  listLength: 1
+}>();
+const emits = defineEmits(['nextCard']);
 
-function leftClick() {
+const leftClick = () => {
   console.log('left');
-}
-
-function rightClick() {
+};
+const rightClick = () => {
   match.value = true;
-}
-
-function startDrag(event: DragEvent) {
+};
+const startDrag = (event: DragEvent) => {
   cardItemStart = event.screenX;
-}
-
-function endDrag(event: DragEvent) {
+};
+const endDrag = (event: DragEvent) => {
   cardItemEnd = event.screenX;
   if (cardItemEnd > cardItemStart) {
     leftClick();
@@ -89,16 +89,8 @@ function endDrag(event: DragEvent) {
   if (cardItemStart > cardItemEnd) {
     rightClick();
   }
-
-}
+};
+const next = () => {
+  emits('nextCard');
+};
 </script>
-
-<style lang="scss" scoped>
-.card {
-  &__main {
-    // background-image:
-    // linear-gradient(0deg, rgba(0, 0, 0, 0.727) 4%, rgba(79,79,79,0.2329306722689075)
-    // 45%, rgba(255,255,255,0) 100%),
-  }
-}
-</style>
