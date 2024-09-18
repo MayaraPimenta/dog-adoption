@@ -1,11 +1,15 @@
 <template>
-  <div class="main font-sans w-screen h-screen flex flex-col justify-center items-center bg-gradient-to-r from-pink via-coral to-light-orange">
-    <Card />
+  <div
+    class="main font-sans w-screen h-screen
+    flex flex-col justify-center items-center
+    bg-gradient-to-r from-amber-400 to-amber-500"
+  >
+    <CardComponent />
   </div>
 </template>
 
 <script setup lang="ts">
-import Card from '@/components/Card.vue'
+import CardComponent from '@/components/common/CardComponent.vue';
 </script>
 
 <style scoped lang="scss">

@@ -7,7 +7,4 @@
 </script>
 
 <style lang="scss">
-#app {
-  font-family: MontSerrat;
-}
 </style>

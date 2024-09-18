@@ -14,8 +14,12 @@ module.exports = {
       spacing: {
         '500': '31rem',
         '300': '18rem'
+      },
+
+      fontFamily: {
+        'montserrat': ['Montserrat', 'Sans-serif']
       }
     },
   },
   plugins: [],
-}
+};
