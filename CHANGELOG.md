@@ -1,3 +1,12 @@
+# [0.3.0](https://github.com/MayaraPimenta/dog-adoption/compare/v0.2.0...v0.3.0) (2024-09-18)
+
+
+### Features
+
+* Adds tag to release workflow file ([8f23def](https://github.com/MayaraPimenta/dog-adoption/commit/8f23def9cf4789bc55060a4503a41e956fc61404))
+
+
+
 # [0.2.0](https://github.com/MayaraPimenta/dog-adoption/compare/v0.1.0...v0.2.0) (2024-09-18)
 
 
