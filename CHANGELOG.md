@@ -1,3 +1,12 @@
+# [0.5.0](https://github.com/MayaraPimenta/dog-adoption/compare/v0.4.0...v0.5.0) (2024-09-18)
+
+
+### Features
+
+* testing softprops/action-gh-release ([f810359](https://github.com/MayaraPimenta/dog-adoption/commit/f8103593196ea88a5d03bdbe033066ebc20b0ca0))
+
+
+
 # [0.4.0](https://github.com/MayaraPimenta/dog-adoption/compare/v0.3.0...v0.4.0) (2024-09-18)
 
 
