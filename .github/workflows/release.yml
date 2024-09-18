@@ -19,11 +19,7 @@ jobs:
         uses: TriPSs/conventional-changelog-action@v5
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          
-      - name: Create a tagged Release
-        uses: elgohr/Github-Release-Action@v5
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          title: ${{ github.ref_name }}
-          tag: ${{ github.run_id }}
+      
+      - name: create release
+        uses: softprops/action-gh-release@v2
+        if: startsWith(github.ref, 'refs/tags/')
