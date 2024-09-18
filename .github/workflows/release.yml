@@ -14,19 +14,16 @@ jobs:
       - name: Checkout source
         uses: actions/checkout@v4
 
-      - name: Get the version from the tag
-        id: extract_version
-        run: echo "VERSION=${GITHUB_REF#refs/tags/}" >> $GITHUB_ENV
-
-      - name: Update Changelog Title
-        run: |
-          sed -i "1s/.*/## Version ${{ env.VERSION }}/" CHANGELOG.md
-
-      - name: Create GitHub Release
-        uses: softprops/action-gh-release@v2
+      - name: conventional Changelog Action
+        id: changelog
+        uses: TriPSs/conventional-changelog-action@v5
         with:
-          tag_name: ${{ env.VERSION }}
-          name: "Release ${{ env.VERSION }}"
-          body_path: ./CHANGELOG.md
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          
+      - name: Create a tagged Release
+        uses: elgohr/Github-Release-Action@v5
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          title: ${{ github.ref_name }}
+          tag: ${{ github.run_id }}
