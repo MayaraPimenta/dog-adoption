@@ -72,7 +72,7 @@ const props = defineProps<{
 const emits = defineEmits(['nextCard']);
 
 const leftClick = () => {
-  console.log('to the left');
+  console.log('to the left, to the left');
 };
 const rightClick = () => {
   match.value = true;
