@@ -21,5 +21,16 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
       
       - name: create release
-        uses: softprops/action-gh-release@v2
-        if: startsWith(github.ref, 'refs/tags/')
+        uses: elgohr/Github-Release-Action@v5
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          title: ${{ github.ref_name }}
+          
+      - name: Create a tagged Release
+        uses: elgohr/Github-Release-Action@v5
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          title: ${{ steps.changelog.outputs.tag }}
+          tag: ${{ github.run_id }}
