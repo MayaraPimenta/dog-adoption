@@ -1,3 +1,13 @@
+# [0.4.0](https://github.com/MayaraPimenta/dog-adoption/compare/v0.3.0...v0.4.0) (2024-09-18)
+
+
+### Features
+
+* returns to Github-Release-Action ([4a34fe1](https://github.com/MayaraPimenta/dog-adoption/commit/4a34fe1be4901e90d8fec837fd19fc7889f8e7de))
+* testing softprops/action-gh-release ([f56fbea](https://github.com/MayaraPimenta/dog-adoption/commit/f56fbeaba50a2e9afd4f5bc0bf88f829b917ca62))
+
+
+
 # [0.3.0](https://github.com/MayaraPimenta/dog-adoption/compare/v0.2.0...v0.3.0) (2024-09-18)
 
 
