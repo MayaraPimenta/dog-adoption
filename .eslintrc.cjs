@@ -49,7 +49,7 @@ module.exports = {
     quotes: ['error', 'single'],
     'no-trailing-spaces': 'error',
     'no-undef': 'error',
-    'no-unused-vars': 'error',
+    'no-unused-vars': ['warn', { 'varsIgnorePattern': '^(props|emits)$' }],
     camelcase: ['error', { properties: 'never', ignoreDestructuring: true }],
     'no-underscore-dangle': 'error',
     'no-param-reassign': [

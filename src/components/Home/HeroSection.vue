@@ -1,3 +1,6 @@
+<script setup lang="ts">
+</script>
+
 <template>
   <section class="flex flex-col tablet:flex-row items-center gap-4 mx-10 tablet:mx-24">
     <div class="flex justify-start flex-col gap-4">
@@ -6,8 +9,8 @@
       </h1>
 
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-        ut labore et dolore magna aliqua. Ut enim ad minim veniam
+        Conectamos animais que precisam de um lar com pessoas em busca de um companheiro, tornando o
+        processo de adoção rápido e acessível.
       </p>
     </div>
 
@@ -18,7 +21,3 @@
     >
   </section>
 </template>
-
-<script setup lang="ts">
-
-</script>
