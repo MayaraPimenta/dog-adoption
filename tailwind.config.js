@@ -13,7 +13,8 @@ module.exports = {
       },
 
       fontFamily: {
-        montserrat: ['Montserrat', 'Sans-serif']
+        montserrat: ['Montserrat', 'Sans-serif'],
+        serif: ['Fraunces', 'serif'],
       },
 
       screens: {

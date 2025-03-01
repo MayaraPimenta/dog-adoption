@@ -1,6 +1,6 @@
 <template>
   <div class="absolute right-0 flex flex-col gap-3 top-0 p-4 bg-secondary-red h-full w-3/5">
-    <button class="w-fit self-end" @click="closeMenu">
+    <button class="w-fit self-end" @click="() => emit('close-menu')">
       <XMarkIcon class="w-8" />
     </button>
 
@@ -21,11 +21,9 @@ const { options } = defineProps<{
   options: Array<string>,
 }>();
 
-const emit = defineEmits(['closeMenu']);
-
-const closeMenu = () => {
-  emit('closeMenu');
-};
+const emit = defineEmits<{
+  (e: 'close-menu'): void;
+}>();
 </script>
 
 <style scoped>

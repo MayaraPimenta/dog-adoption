@@ -1,5 +1,5 @@
 <template>
-  <header class="flex items-center justify-between gap-12 mx-10 tablet:mx-12">
+  <header class="flex items-center justify-between gap-12 mx-10 tablet:mx-24 pt-4 pb-6">
     <a href="#home" class="hover-scale">
       <img class="w-12" src="@/assets/logo.svg" alt="Logo">
     </a>
