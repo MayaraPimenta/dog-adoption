@@ -4,21 +4,23 @@
       <XMarkIcon class="w-8" />
     </button>
 
-    <a
+    <router-link
       v-for="(option, index) in options"
       :key="index"
+      :to="option.url"
       class="text-sm font-medium"
     >
-      {{ option }}
-    </a>
+      {{ option.name }}
+    </router-link>
   </div>
 </template>
 
 <script setup lang="ts">
+import type { NavOptions } from '@/types/Header/navOptions';
 import { XMarkIcon } from '@heroicons/vue/16/solid';
 
 const { options } = defineProps<{
-  options: Array<string>,
+  options: NavOptions[],
 }>();
 
 const emit = defineEmits<{

@@ -14,20 +14,21 @@
 
       <MobileMenu
         v-if="isMenuOpen"
-        :options="navOptions"
+        :options="mobileMenuOptions"
         @close-menu="closeMobileMenu"
       />
     </section>
 
     <section v-else class="flex w-full justify-between">
       <nav class="flex items-center gap-8">
-        <a
+        <router-link
           v-for="(option, index) in navOptions"
           :key="index"
+          :to="option.url"
           class="hover:text-primary cursor-pointer transition"
         >
-          {{ option }}
-        </a>
+          {{ option.name }}
+        </router-link>
       </nav>
 
       <ButtonDefault
@@ -42,15 +43,26 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
+import { computed, ref } from 'vue';
 import ButtonDefault from '../../shared/ButtonDefault.vue';
 import { Bars3Icon } from '@heroicons/vue/20/solid';
 import { useMediaQuery } from '@vueuse/core';
 import MobileMenu from './MobileMenu.vue';
 
-const navOptions = ref(['Login', 'Home', 'Adote', 'Sobre', 'Contato']);
+const navOptions = [
+  { name: 'Home', url: '' },
+  { name: 'Adote', url: '' },
+  { name: 'Sobre', url: '' },
+  { name: 'Contato', url: '' }
+];
 const isMobile = useMediaQuery('(max-width: 768px)');
 const isMenuOpen = ref(false);
+
+const mobileMenuOptions = computed(() => {
+  const option = { name: 'Login', url: '' };
+
+  return [option, ...navOptions];
+});
 
 const openMobileMenu = () => {
   isMenuOpen.value = true;
