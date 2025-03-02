@@ -9,4 +9,8 @@
   .hover-scale {
     @apply transition-transform hover:scale-110;
   }
+
+  .max-size {
+    @apply mx-10 tablet:mx-24 max-w-[1200px]
+  }
 }

@@ -29,7 +29,7 @@ const cardContent = [
 </script>
 
 <template>
-  <section class="flex gap-8 mx-24 py-12">
+  <section class="flex flex-col tablet:flex-row gap-8 mx-12 tablet:mx-24 py-12">
     <div class="max-w-[400px]">
       <HomeTitle align="start">Encontre facilmente o pet ideal para você.</HomeTitle>
       <p class="my-6"> Com filtros intuitivos e perfis detalhados, ajudamos você a encontrar seu novo amigo</p>
