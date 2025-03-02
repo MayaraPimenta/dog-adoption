@@ -98,5 +98,6 @@ module.exports = {
       'error',
       { singleline: 'always', multiline: 'always', maxEmptyLines: 0 },
     ],
+    'vue/attribute-hyphenation': 'off'
   },
 };

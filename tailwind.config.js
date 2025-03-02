@@ -1,7 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [],
-  purge: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
+  content: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
   theme: {
     extend: {
       colors: {
@@ -9,7 +8,7 @@ module.exports = {
         'primary': '#f7cb54',
         'secondary-red': '#ffccb4',
         'secondary-blue': '#9cd3d1',
-        'secondary-green': '#92C480',
+        'secondary-green': '#A2CB93',
         'black-100': '#1e1e1e'
       },
 
@@ -25,7 +24,7 @@ module.exports = {
       },
 
       boxShadow: {
-        'default': '2px 2px 0 #1e1e1e',
+        'default': '3px 3px 0 #1e1e1e',
         'card': '5px 5px 0 #1e1e1e',
       }
     },

@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import BenefitsCard from '@/components/Home/AdoptionBenefits/BenefitsCard.vue';
+import HomeTitle from '../HomeTitle.vue';
 
 const benefits = [
   'Adotar dá um lar a animais resgatados, reduzindo a população de rua',
@@ -11,9 +12,9 @@ const benefits = [
 
 <template>
   <section class="bg-secondary-blue py-12 px-10 tablet:px-24">
-    <h1 class="font-serif text-3xl tablet:text-5xl text-center font-semibold">
+    <HomeTitle>
       Não compre, adote!
-    </h1>
+    </HomeTitle>
     <p class="text-center text-sm mt-4 mb-2.5">
       Adotar um animal em vez de comprar é um ato de amor que salva vidas e faz a diferença.
       Além de ajudar a reduzir o abandono, essa escolha apoia abrigos, pode ser mais econômica
