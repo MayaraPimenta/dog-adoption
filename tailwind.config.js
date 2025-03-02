@@ -5,11 +5,12 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'background-100': '#F8E7D7',
-        'primary': '#FDB402',
-        'secondary-red': '#F95D54',
-        'secondary-blue': '#0065AF',
-        'secondary-green': '#407E46'
+        'background-100': '#faf4e1',
+        'primary': '#f7cb54',
+        'secondary-red': '#ffccb4',
+        'secondary-blue': '#9cd3d1',
+        'secondary-green': '#92C480',
+        'black-100': '#1e1e1e'
       },
 
       fontFamily: {
@@ -24,7 +25,8 @@ module.exports = {
       },
 
       boxShadow: {
-        'default': '2px 2px 0 rgba(30, 30, 30, 1)'
+        'default': '2px 2px 0 #1e1e1e',
+        'card': '5px 5px 0 #1e1e1e',
       }
     },
   },

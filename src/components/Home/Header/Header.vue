@@ -24,7 +24,7 @@
         <a
           v-for="(option, index) in navOptions"
           :key="index"
-          class="hover:text-secondary-red cursor-pointer transition"
+          class="hover:text-primary cursor-pointer transition"
         >
           {{ option }}
         </a>
@@ -48,7 +48,7 @@ import { Bars3Icon } from '@heroicons/vue/20/solid';
 import { useMediaQuery } from '@vueuse/core';
 import MobileMenu from './MobileMenu.vue';
 
-const navOptions = ref(['Home', 'Adote', 'Sobre', 'Contato']);
+const navOptions = ref(['Login', 'Home', 'Adote', 'Sobre', 'Contato']);
 const isMobile = useMediaQuery('(max-width: 768px)');
 const isMenuOpen = ref(false);
 

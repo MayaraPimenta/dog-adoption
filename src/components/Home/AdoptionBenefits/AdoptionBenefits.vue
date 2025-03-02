@@ -10,17 +10,17 @@ const benefits = [
 </script>
 
 <template>
-  <section class="bg-secondary-green h-[500px] py-12 px-24">
+  <section class="bg-secondary-blue py-12 px-10 tablet:px-24">
     <h1 class="font-serif text-3xl tablet:text-5xl text-center font-semibold">
       Não compre, adote!
     </h1>
-    <p class="text-center text-sm my-2.5">
+    <p class="text-center text-sm mt-4 mb-2.5">
       Adotar um animal em vez de comprar é um ato de amor que salva vidas e faz a diferença.
       Além de ajudar a reduzir o abandono, essa escolha apoia abrigos, pode ser mais econômica
       e proporciona um companheiro leal e único. Confira alguns dos principais benefícios da adoção:
     </p>
 
-    <div>
+    <div class="flex items-stretch flex-col tablet:flex-row gap-8 my-8">
       <BenefitsCard
         v-for="(benefit, index) in benefits"
         :key="index"

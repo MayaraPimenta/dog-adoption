@@ -33,7 +33,6 @@ module.exports = {
     // --- ESLint
     eqeqeq: ['error', 'always'],
     'dot-notation': 'error',
-    'func-call-spacing': ['error', 'never'],
     'key-spacing': ['error', { beforeColon: false }],
     'max-len': ['error', { code: 120, ignoreStrings: true }],
     'no-useless-concat': 'error',

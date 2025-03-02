@@ -1,5 +1,5 @@
 <template>
-  <div class="absolute right-0 flex flex-col gap-3 top-0 p-4 bg-secondary-red h-full w-3/5">
+  <div class="fixed right-0 flex flex-col gap-3 top-0 p-4 bg-primary h-full w-2/4">
     <button class="w-fit self-end" @click="() => emit('close-menu')">
       <XMarkIcon class="w-8" />
     </button>
@@ -7,7 +7,7 @@
     <a
       v-for="(option, index) in options"
       :key="index"
-      class="text-sm"
+      class="text-sm font-medium"
     >
       {{ option }}
     </a>
