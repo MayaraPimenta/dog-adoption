@@ -8,13 +8,10 @@
 </template>
 
 <script setup lang="ts">
-const { backgroundColor, textColor } = withDefaults(defineProps<{
+const { backgroundColor = 'secondary-red', textColor = 'black-100' } = defineProps<{
   backgroundColor?: string,
   textColor?: string
-}>(), {
-  backgroundColor: 'secondary-red',
-  textColor: 'black-100'
-});
+}>();
 </script>
 
 <style scoped>

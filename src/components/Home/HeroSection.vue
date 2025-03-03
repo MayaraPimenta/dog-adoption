@@ -2,7 +2,7 @@
 </script>
 
 <template>
-  <section class="flex flex-col tablet:flex-row items-center gap-4 mx-10 tablet:mx-24">
+  <section class="flex flex-col tablet:flex-row items-center gap-4 max-size">
     <div class="flex justify-start flex-col gap-4">
       <h1 class="font-serif text-5xl tablet:text-6xl font-bold max-w-[500px]">
         Seu melhor amigo está aqui!

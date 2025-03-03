@@ -11,22 +11,24 @@ const benefits = [
 </script>
 
 <template>
-  <section class="bg-secondary-blue py-12 px-10 tablet:px-24">
-    <HomeTitle>
-      Não compre, adote!
-    </HomeTitle>
-    <p class="text-center text-sm mt-4 mb-2.5">
-      Adotar um animal em vez de comprar é um ato de amor que salva vidas e faz a diferença.
-      Além de ajudar a reduzir o abandono, essa escolha apoia abrigos, pode ser mais econômica
-      e proporciona um companheiro leal e único. Confira alguns dos principais benefícios da adoção:
-    </p>
+  <section class="bg-secondary-blue py-12 tablet:px-24">
+    <div class="max-size">
+      <HomeTitle>
+        Não compre, adote!
+      </HomeTitle>
+      <p class="text-center text-sm mt-4 mb-2.5">
+        Adotar um animal em vez de comprar é um ato de amor que salva vidas e faz a diferença.
+        Além de ajudar a reduzir o abandono, essa escolha apoia abrigos, pode ser mais econômica
+        e proporciona um companheiro leal e único. Confira alguns dos principais benefícios da adoção:
+      </p>
 
-    <div class="flex items-stretch flex-col tablet:flex-row gap-8 my-8">
-      <BenefitsCard
-        v-for="(benefit, index) in benefits"
-        :key="index"
-        :content="benefit"
-      />
+      <div class="flex items-stretch flex-col tablet:flex-row gap-8 my-8">
+        <BenefitsCard
+          v-for="(benefit, index) in benefits"
+          :key="index"
+          :content="benefit"
+        />
+      </div>
     </div>
   </section>
 </template>
