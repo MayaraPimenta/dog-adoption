@@ -18,12 +18,12 @@ const cardContent = [
   {
     icon: HeartIcon,
     text: 'Selecione o perfil desejado',
-    backgroundColor: 'secondary-blue'
+    backgroundColor: 'secondary-green'
   },
   {
     icon: CheckCircleIcon,
     text: 'E pronto! Agora é só aguardar o contato do abrigo',
-    backgroundColor: 'secondary-green'
+    backgroundColor: 'secondary-blue'
   }
 ];
 </script>

@@ -51,8 +51,8 @@ import MobileMenu from './MobileMenu.vue';
 
 const navOptions = [
   { name: 'Home', url: '' },
-  { name: 'Adote', url: '' },
   { name: 'Sobre', url: '' },
+  { name: 'Adote', url: '' },
   { name: 'Contato', url: '' }
 ];
 const isMobile = useMediaQuery('(max-width: 768px)');
