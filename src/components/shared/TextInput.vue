@@ -4,7 +4,8 @@ import { defineModel } from 'vue';
 const props = defineProps<{
   id: string,
   label?: string,
-  placeholder?: string
+  placeholder?: string,
+  type?: string
 }>();
 
 const model = defineModel();
@@ -18,7 +19,7 @@ const model = defineModel();
       v-model="model"
       :placeholder="placeholder"
       class="w-full h-[40px] rounded-lg border border-black-100 p-2"
-      type="text"
+      :type="type"
     >
   </div>
 </template>
