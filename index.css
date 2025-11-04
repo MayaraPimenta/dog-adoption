@@ -1,17 +1,51 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap')
+layer(base);
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap')
+layer(base);
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
 
-/* mudar para tailwind.config */
-@layer utilities {
-  .hover-scale {
-    @apply transition-transform hover:scale-110;
+@theme {
+  --color-background-100: #faf4e1;
+  --color-primary: #f7cb54;
+  --color-secondary-red: #ffccb4;
+  --color-secondary-blue: #9cd3d1;
+  --color-secondary-green: #a2cb93;
+  --color-black-100: #1e1e1e;
+
+  --font-montserrat: Montserrat, Sans-serif;
+  --font-serif: Fraunces, serif;
+
+  --breakpoint-tablet: 768px;
+  --breakpoint-laptop: 1024px;
+  --breakpoint-desktop: 1280px;
+
+  --shadow-default: 3px 3px 0 #1e1e1e;
+  --shadow-card: 5px 5px 0 #1e1e1e;
+}
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
   }
+}
 
-  .max-size {
-    @apply mx-10 tablet:mx-24 desktop:max-w-[1200px] desktop:mx-auto
-  }
+.hover-scale {
+  @apply transition-transform hover:scale-110;
+}
+
+.max-size {
+  @apply mx-10 tablet:mx-24 desktop:max-w-[1200px] desktop:mx-auto;
 }
