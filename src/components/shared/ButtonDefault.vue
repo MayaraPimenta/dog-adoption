@@ -1,6 +1,6 @@
 <template>
   <button
-    class="hover-scale border border-black-100 rounded-lg shadow-default px-6 py-2 text-sm"
+    class="hover-scale border border-black-100 rounded-lg shadow-default px-6 py-2 text-sm cursor-pointer"
     :class="[`bg-${backgroundColor}`, `text-${textColor}`, full ? 'w-full' : '']"
     @click="() => emit('btnClick')"
   >

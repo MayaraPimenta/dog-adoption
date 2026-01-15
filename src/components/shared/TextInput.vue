@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { defineModel } from 'vue';
-
 const props = defineProps<{
   id: string,
   label?: string,
@@ -18,7 +16,7 @@ const model = defineModel();
       :id="id"
       v-model="model"
       :placeholder="placeholder"
-      class="w-full h-[40px] rounded-lg border border-black-100 p-2"
+      class="w-full h-[40px] rounded-lg border border-black-100 bg-background-100 p-2"
       :type="type"
     >
   </div>

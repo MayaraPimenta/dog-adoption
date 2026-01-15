@@ -73,7 +73,7 @@ const sendForm = () => {
         id="comments"
         v-model="form.comments"
         name="comments"
-        class="mt-4 tablet:mt-6 w-full h-[200px] rounded-lg border border-black-100 p-3"
+        class="mt-4 tablet:mt-6 w-full h-[200px] rounded-lg border bg-background-100 border-black-100 p-3"
         placeholder="Digite seu comentário..."
       />
       <div v-if="errors?.comments" class="text-red-500 text-xs">

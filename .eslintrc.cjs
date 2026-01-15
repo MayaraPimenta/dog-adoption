@@ -6,8 +6,8 @@ module.exports = {
   extends: [
     'plugin:vue/vue3-recommended',
     '@vue/typescript/recommended',
-    'prettier',
   ],
+  plugins: ['@stylistic'],
   parserOptions: {
     ecmaVersion: 'latest'
   },
@@ -33,20 +33,20 @@ module.exports = {
     // --- ESLint
     eqeqeq: ['error', 'always'],
     'dot-notation': 'error',
-    'key-spacing': ['error', { beforeColon: false }],
-    'max-len': ['error', { code: 120, ignoreStrings: true }],
+    '@stylistic/key-spacing': ['error', { beforeColon: false }],
+    '@stylistic/max-len': ['error', { code: 120, ignoreStrings: true }],
     'no-useless-concat': 'error',
     'prefer-template': 'error',
-    'object-property-newline': [
+    '@stylistic/object-property-newline': [
       'error',
       { allowAllPropertiesOnSameLine: true },
     ],
-    'object-curly-spacing': ['error', 'always'],
-    'space-unary-ops': 'error',
-    'template-curly-spacing': ['error'],
+    '@stylistic/object-curly-spacing': ['error', 'always'],
+    '@stylistic/space-unary-ops': 'error',
+    '@stylistic/template-curly-spacing': ['error'],
     'arrow-body-style': ['error', 'as-needed'],
-    quotes: ['error', 'single'],
-    'no-trailing-spaces': 'error',
+    '@stylistic/quotes': ['error', 'single'],
+    '@stylistic/no-trailing-spaces': 'error',
     'no-undef': 'error',
     'no-unused-vars': ['warn', { 'varsIgnorePattern': '^(props|emits)$' }],
     camelcase: ['error', { properties: 'never', ignoreDestructuring: true }],
@@ -55,8 +55,8 @@ module.exports = {
       'error',
       { props: true, ignorePropertyModificationsFor: ['state'] },
     ],
-    semi: ['error', 'always'],
-    'padding-line-between-statements': [
+    '@stylistic/semi': ['error', 'always'],
+    '@stylistic/padding-line-between-statements': [
       'error',
       { blankLine: 'always', prev: ['const', 'let', 'var'], next: '*' },
       {
