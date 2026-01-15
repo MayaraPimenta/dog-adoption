@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import HomeTitle from '@/components/Home/HomeTitle.vue';
-import ButtonDefault from '@/components/shared/ButtonDefault.vue';
+import HomeTitle from '@/modules/home/components/HomeTitle.vue';
+import ButtonDefault from '@/shared/components/ButtonDefault.vue';
 import StepCard from './StepCard.vue';
 import { CursorArrowRaysIcon, HeartIcon, CheckCircleIcon, ClipboardDocumentIcon } from '@heroicons/vue/24/outline';
 
@@ -31,9 +31,15 @@ const cardContent = [
 <template>
   <section class="flex flex-col tablet:flex-row gap-8 max-size py-12">
     <div class="max-w-[400px]">
-      <HomeTitle align="start">Encontre facilmente o pet ideal para você.</HomeTitle>
-      <p class="my-6"> Com filtros intuitivos e perfis detalhados, ajudamos você a encontrar seu novo amigo</p>
-      <ButtonDefault backgroundColor="primary">Comece aqui</ButtonDefault>
+      <HomeTitle align="start">
+        Encontre facilmente o pet ideal para você.
+      </HomeTitle>
+      <p class="my-6">
+        Com filtros intuitivos e perfis detalhados, ajudamos você a encontrar seu novo amigo
+      </p>
+      <ButtonDefault backgroundColor="primary">
+        Comece aqui
+      </ButtonDefault>
     </div>
 
     <div class="w-full flex flex-col gap-4">

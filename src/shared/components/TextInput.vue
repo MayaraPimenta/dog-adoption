@@ -11,7 +11,10 @@ const model = defineModel();
 
 <template>
   <div class="w-full flex flex-col gap-2 text-sm font-medium">
-    <label v-if="label" :for="id">{{ label }}</label>
+    <label
+      v-if="label"
+      :for="id"
+    >{{ label }}</label>
     <input
       :id="id"
       v-model="model"

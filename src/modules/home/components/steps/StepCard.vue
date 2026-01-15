@@ -14,7 +14,10 @@ const props = defineProps<{
     :class="`bg-${backgroundColor}`"
   >
     <span class="rounded-full border border-solid border-black-100 p-2 bg-background-100">
-      <component :is="icon" class="w-6 h-6 text-black-100" />
+      <component
+        :is="icon"
+        class="w-6 h-6 text-black-100"
+      />
     </span>
     <p>{{ text }}</p>
   </div>

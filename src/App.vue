@@ -1,11 +1,9 @@
 <script setup lang="ts">
+  import LayoutDefault from '@/layouts/LayoutDefault.vue';
 </script>
 
 <template>
-  <main class="app bg-background-100 w-screen h-full font-montserrat">
+  <LayoutDefault>
     <router-view />
-  </main>
+  </LayoutDefault>
 </template>
-
-<style lang="scss">
-</style>

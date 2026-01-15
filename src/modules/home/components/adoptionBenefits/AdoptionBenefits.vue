@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import BenefitsCard from '@/components/Home/AdoptionBenefits/BenefitsCard.vue';
-import HomeTitle from '../HomeTitle.vue';
+import BenefitsCard from '@/modules/home/components/adoptionBenefits/BenefitsCard.vue';
+import HomeTitle from '@/modules/home/components/HomeTitle.vue';
 
 const benefits = [
   'Adotar dá um lar a animais resgatados, reduzindo a população de rua',
