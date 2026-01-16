@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const props = defineProps<{
-  content: string
+  content: string;
 }>();
 </script>
 
@@ -13,4 +13,3 @@ const props = defineProps<{
     {{ content }}
   </article>
 </template>
-

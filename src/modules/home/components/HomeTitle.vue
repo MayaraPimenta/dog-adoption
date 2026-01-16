@@ -1,8 +1,8 @@
 <script setup lang="ts">
 const props = withDefaults(defineProps<{
-  align?: string
+  align?: string;
 }>(), {
-  align: 'center'
+  align: 'center',
 });
 </script>
 

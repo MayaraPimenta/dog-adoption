@@ -1,9 +1,9 @@
 <script setup lang="ts">
 const props = defineProps<{
-  id: string,
-  label?: string,
-  placeholder?: string,
-  type?: string
+  id: string;
+  label?: string;
+  placeholder?: string;
+  type?: string;
 }>();
 
 const model = defineModel();

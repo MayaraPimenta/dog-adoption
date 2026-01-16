@@ -1,3 +1,35 @@
+<script setup lang="ts">
+import { Bars3Icon } from '@heroicons/vue/20/solid';
+import { useMediaQuery } from '@vueuse/core';
+import { computed, ref } from 'vue';
+import MobileMenu from '@/layouts/components/header/MobileMenu.vue';
+import logo from '@/shared/assets/logo.svg';
+import ButtonDefault from '@/shared/components/ButtonDefault.vue';
+
+const navOptions = [
+  { name: 'Home', url: '' },
+  { name: 'Sobre', url: '' },
+  { name: 'Adote', url: '' },
+  { name: 'Contato', url: '' },
+];
+const isMobile = useMediaQuery('(max-width: 768px)');
+const isMenuOpen = ref(false);
+
+const mobileMenuOptions = computed(() => {
+  const option = { name: 'Login', url: '' };
+
+  return [option, ...navOptions];
+});
+
+function openMobileMenu() {
+  isMenuOpen.value = true;
+}
+
+function closeMobileMenu() {
+  isMenuOpen.value = false;
+}
+</script>
+
 <template>
   <header class="bg-background-100 w-full pt-4 pb-6">
     <main class="max-size flex items-center justify-between md:justify-center  gap-12">
@@ -53,38 +85,6 @@
     </main>
   </header>
 </template>
-
-<script setup lang="ts">
-import { computed, ref } from 'vue';
-import ButtonDefault from '@/shared/components/ButtonDefault.vue';
-import { Bars3Icon } from '@heroicons/vue/20/solid';
-import { useMediaQuery } from '@vueuse/core';
-import MobileMenu from '@/layouts/components/header/MobileMenu.vue';
-import logo from '@/shared/assets/logo.svg';
-
-const navOptions = [
-  { name: 'Home', url: '' },
-  { name: 'Sobre', url: '' },
-  { name: 'Adote', url: '' },
-  { name: 'Contato', url: '' }
-];
-const isMobile = useMediaQuery('(max-width: 768px)');
-const isMenuOpen = ref(false);
-
-const mobileMenuOptions = computed(() => {
-  const option = { name: 'Login', url: '' };
-
-  return [option, ...navOptions];
-});
-
-const openMobileMenu = () => {
-  isMenuOpen.value = true;
-};
-
-const closeMobileMenu = () => {
-  isMenuOpen.value = false;
-};
-</script>
 
 <style scoped>
 

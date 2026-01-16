@@ -1,31 +1,29 @@
 <script setup lang="ts">
-import TextInput from '@/shared/components/TextInput.vue';
-import HomeTitle from '@/modules/home/components/HomeTitle.vue';
-import ButtonDefault from '@/shared/components/ButtonDefault.vue';
 import { ref } from 'vue';
 import z from 'zod';
+import HomeTitle from '@/modules/home/components/HomeTitle.vue';
+import ButtonDefault from '@/shared/components/ButtonDefault.vue';
+import TextInput from '@/shared/components/TextInput.vue';
 
 const form = ref({
   name: '',
   phone: '',
   email: '',
-  comments: ''
+  comments: '',
 });
 
 const formSchema = z.object({
   name: z.string().min(3, { message: 'O nome deve ter pelo menos 3 caracteres' }),
   phone: z.number({ message: 'Esse campo só aceita números' }).min(11, { message: 'O telefone deve ter pelo menos 11 caracteres' }),
   email: z.string().email({ message: 'O e-mail deve ser válido' }),
-  comments: z.string().min(10, { message: 'O comentário deve ter pelo menos 10 caracteres' })
+  comments: z.string().min(10, { message: 'O comentário deve ter pelo menos 10 caracteres' }),
 });
 
 type formSchemaType = z.infer<typeof formSchema>;
 
 const errors = ref<z.ZodFormattedError<formSchemaType> | null>(null);
 
-const sendForm = () => {
-  console.log(form.value);
-
+function sendForm() {
   const validSchema = formSchema.safeParse(form.value);
 
   if (!validSchema.success) {
@@ -35,7 +33,7 @@ const sendForm = () => {
   }
 
   errors.value = null;
-};
+}
 </script>
 
 <template>

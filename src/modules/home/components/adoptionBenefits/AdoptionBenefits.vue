@@ -6,7 +6,7 @@ const benefits = [
   'Adotar dá um lar a animais resgatados, reduzindo a população de rua',
   'Incentiva o trabalho de ONGs e protetores que resgatam e cuidam de animais',
   'Animais adotados geralmente já vêm vacinados e castrados, reduzindo despesas iniciais',
-  'Muitos animais adotados são gratos e desenvolvem laços profundos com seus tutores'
+  'Muitos animais adotados são gratos e desenvolvem laços profundos com seus tutores',
 ];
 </script>
 

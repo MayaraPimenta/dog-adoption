@@ -1,4 +1,4 @@
-export type NavOptions = {
-  name: string,
-  url: string
-};
+export interface NavOptions {
+  name: string;
+  url: string;
+}

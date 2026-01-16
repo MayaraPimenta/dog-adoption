@@ -2,9 +2,9 @@
 import type { FunctionalComponent } from 'vue';
 
 const props = defineProps<{
-  icon: FunctionalComponent,
-  text: string,
-  backgroundColor?: string
+  icon: FunctionalComponent;
+  text: string;
+  backgroundColor?: string;
 }>();
 </script>
 

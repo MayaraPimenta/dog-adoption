@@ -1,30 +1,30 @@
 <script setup lang="ts">
+import { CheckCircleIcon, ClipboardDocumentIcon, CursorArrowRaysIcon, HeartIcon } from '@heroicons/vue/24/outline';
 import HomeTitle from '@/modules/home/components/HomeTitle.vue';
 import ButtonDefault from '@/shared/components/ButtonDefault.vue';
 import StepCard from './StepCard.vue';
-import { CursorArrowRaysIcon, HeartIcon, CheckCircleIcon, ClipboardDocumentIcon } from '@heroicons/vue/24/outline';
 
 const cardContent = [
   {
     icon: CursorArrowRaysIcon,
     text: 'Selecione as características que deseja em seu novo amigo',
-    backgroundColor: 'primary'
+    backgroundColor: 'primary',
   },
   {
     icon: ClipboardDocumentIcon,
     text: 'Receba sugestões próximas que combinam com você',
-    backgroundColor: 'secondary-red'
+    backgroundColor: 'secondary-red',
   },
   {
     icon: HeartIcon,
     text: 'Selecione o perfil desejado',
-    backgroundColor: 'secondary-green'
+    backgroundColor: 'secondary-green',
   },
   {
     icon: CheckCircleIcon,
     text: 'E pronto! Agora é só aguardar o contato do abrigo',
-    backgroundColor: 'secondary-blue'
-  }
+    backgroundColor: 'secondary-blue',
+  },
 ];
 </script>
 
@@ -37,7 +37,7 @@ const cardContent = [
       <p class="my-6">
         Com filtros intuitivos e perfis detalhados, ajudamos você a encontrar seu novo amigo
       </p>
-      <ButtonDefault backgroundColor="primary">
+      <ButtonDefault background-color="primary">
         Comece aqui
       </ButtonDefault>
     </div>
@@ -48,7 +48,7 @@ const cardContent = [
         :key="index"
         :icon="card.icon"
         :text="card.text"
-        :backgroundColor="card.backgroundColor"
+        :background-color="card.backgroundColor"
       />
     </div>
   </section>
