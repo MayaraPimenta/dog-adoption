@@ -8,7 +8,7 @@ import LayoutDefault from '@/layouts/LayoutDefault.vue';
   </LayoutDefault>
 </template>
 
-<!-- TO-DO 
+<!-- TO-DO
 - Adicionar i18n e arquivos de labels - futuramente funcionalidade de tradução
 - Criar composables
 -->

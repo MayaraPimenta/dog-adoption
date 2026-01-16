@@ -22,7 +22,7 @@ vi.mock('@vueuse/core', async (importOriginal) => {
   };
 });
 
-describe('Header Component', () => {
+describe('header Component', () => {
   it('should open mobile menu when hamburger icon is clicked', async () => {
     const wrapper = mount(Header, {
       global: {
@@ -63,10 +63,9 @@ describe('Header Component', () => {
     const mobileMenu = wrapper.findComponent(MobileMenu);
 
     // Emit the 'close-menu' event directly from the child component
-    await mobileMenu.vm.$emit('close-menu');
+    await mobileMenu.vm.$emit('closeMenu');
 
     // Assert: MobileMenu should be gone
     expect(wrapper.findComponent(MobileMenu).exists()).toBe(false);
   });
 });
-
