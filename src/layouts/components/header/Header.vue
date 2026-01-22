@@ -7,16 +7,16 @@ import logo from '@/shared/assets/logo.svg';
 import ButtonDefault from '@/shared/components/ButtonDefault.vue';
 
 const navOptions = [
-  { name: 'Home', url: '' },
-  { name: 'Sobre', url: '' },
-  { name: 'Adote', url: '' },
-  { name: 'Contato', url: '' },
+  { name: 'Home', url: '/' },
+  { name: 'Sobre', url: '/sobre' },
+  { name: 'Adote', url: '/adote' },
+  { name: 'Contato', url: '/contato' },
 ];
 const isMobile = useMediaQuery('(max-width: 768px)');
 const isMenuOpen = ref(false);
 
 const mobileMenuOptions = computed(() => {
-  const option = { name: 'Login', url: '' };
+  const option = { name: 'Login', url: '/login' };
 
   return [option, ...navOptions];
 });
@@ -76,8 +76,9 @@ function closeMobileMenu() {
 
         <ButtonDefault
           v-if="!isMobile"
-          background-color="secondary-red"
+          background-color="bg-secondary-red"
           width="24"
+          @click="() => $router.push('/login')"
         >
           Login
         </ButtonDefault>

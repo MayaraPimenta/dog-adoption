@@ -16,6 +16,7 @@ layer(base);
   --font-montserrat: Montserrat, Sans-serif;
   --font-serif: Fraunces, serif;
 
+  --breakpoint-mobile: 320px;
   --breakpoint-tablet: 768px;
   --breakpoint-laptop: 1024px;
   --breakpoint-desktop: 1280px;
@@ -47,5 +48,5 @@ layer(base);
 }
 
 .max-size {
-  @apply mx-10 tablet:mx-24 desktop:max-w-[1200px] desktop:mx-auto;
+  @apply mx-10 tablet:mx-24 desktop:max-w-300 desktop:mx-auto;
 }

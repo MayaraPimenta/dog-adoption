@@ -5,21 +5,16 @@ import { AuthService } from '@/core/auth/services';
 import { useUserStore } from '@/core/user/store';
 
 export const useAuthStore = defineStore('auth', () => {
-  // Estado
   const token = ref<string | null>(localStorage.getItem('token'));
   const loading = ref(false);
   const error = ref<string | null>(null);
 
-  // Stores
   const userStore = useUserStore();
 
-  // Getters
   const isAuthenticated = computed(() => !!token.value);
 
-  // Instância do Serviço (pode ser injetada se preferir)
   const authService = new AuthService();
 
-  // Actions
   async function login(credentials: { email: string; password: string }) {
     loading.value = true;
     error.value = null;

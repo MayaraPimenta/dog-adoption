@@ -37,7 +37,7 @@ const cardContent = [
       <p class="my-6">
         Com filtros intuitivos e perfis detalhados, ajudamos você a encontrar seu novo amigo
       </p>
-      <ButtonDefault background-color="primary">
+      <ButtonDefault background-color="bg-primary">
         Comece aqui
       </ButtonDefault>
     </div>
