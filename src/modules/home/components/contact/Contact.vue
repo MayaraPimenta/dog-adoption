@@ -122,7 +122,7 @@ function sendForm() {
       <div class="grid grid-cols-3 gap-6 mt-4">
         <ButtonDefault
           class="col-start-1 tablet:col-start-3 col-end-4"
-          backgroundColor="bg-primary"
+          background-color="bg-primary"
           :full="true"
           @btn-click="sendForm"
         >
