@@ -6,4 +6,5 @@
 - [x] DogCard com swipe gesture
 - [x] Tela de match/confirmação
 - [x] Lista de dogs curtidos
+- [ ] Finalizar autenticação
 - [ ] Integração com API de cães
