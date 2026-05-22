@@ -1,0 +1,24 @@
+<script setup lang="ts">
+import heroImg from '@/shared/assets/img/home-hero.png';
+</script>
+
+<template>
+  <section class="flex flex-col tablet:flex-row items-center gap-4 max-size">
+    <div class="flex justify-start flex-col gap-4">
+      <h1 class="font-serif text-5xl tablet:text-6xl font-bold max-w-125">
+        Seu melhor amigo está aqui!
+      </h1>
+
+      <p>
+        Conectamos animais que precisam de um lar com pessoas em busca de um companheiro, tornando o
+        processo de adoção rápido e acessível.
+      </p>
+    </div>
+
+    <img
+      :src="heroImg"
+      alt="Foto de cachorro caramelo"
+      class="w-62.5 tablet:w-75"
+    >
+  </section>
+</template>
